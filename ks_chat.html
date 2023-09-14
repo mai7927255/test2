@@ -1,11 +1,11 @@
 <html>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
+		background-color: #FFD400;
+		font-family: "Krungsri", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
+		outline: 1px solid #FFD400;
 	}
 </style>
 
@@ -34,17 +34,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://krungsri--full.sandbox.my.salesforce.com',
-			'https://krungsri--full.sandbox.my.salesforce-sites.com/liveAgentSetupFlow',
+			'https://krungsri--peerawat.sandbox.my.salesforce.com',
+			'https://krungsri--peerawat.sandbox.my.salesforce-sites.com/liveAgentSetupFlow',
 			gslbBaseURL,
-			'00D0w0000002kjF',
-			'Peerawat',
+			'00D0l000000HGps',
+			'Krungsri_CC_Non_Voice_Krungsri_Website',
 			{
 				baseLiveAgentContentURL: 'https://c.la1-c1cs-ukb.salesforceliveagent.com/content',
-				deploymentId: '5720K000000Gwdg',
-				buttonId: '5730K000000GxK3',
+				deploymentId: '5720K000000Cl1k',
+				buttonId: '5730K000000GxK1',
 				baseLiveAgentURL: 'https://d.la1-c1cs-ukb.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0w000000CaVOEA0_18a91cd250d',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1y0000004CBEEA2_170c91a6dbc',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -52,7 +52,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://krungsri--full.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://krungsri--peerawat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
