@@ -34,7 +34,9 @@ var initESW = function (gslbBaseURL) {
         { "value": "Thai", "label": "Language", "displayToAgent": true },
         { "value": "Live Chat", "label": "Origin", "displayToAgent": true },
         { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true }];
-        embedded_svc.settings.extraPrechatInfo = [{
+
+	//แก้
+embedded_svc.settings.extraPrechatInfo = [{
             "entityName": "Case",
             "showOnCreate": true,
             "saveToTranscript": "CaseId",
@@ -57,7 +59,24 @@ var initESW = function (gslbBaseURL) {
                 "doFind": false,
                 "label": "Channel"
             }]
-        }];
+        },{
+  	  "entityName": "Account",
+  	  "linkToEntityName": "Case",
+  	  "linkToEntityField": "AccountId",
+  	  "entityFieldMaps": [{
+    		"isExactMatch": true,
+    		"fieldName": "First_Name_Thai_Encrypted__c",
+    		"doCreate": true,
+    		"doFind": true,
+    		"label": "First Name"
+  	  },{
+    		"isExactMatch": true,
+    		"fieldName": "Last_Name_Thai_Encrypted__c",
+    		"doCreate": true,
+    		"doFind": true,
+    		"label": "Last Name"
+  	}]
+}];
 
         embedded_svc.settings.enabledFeatures = ['LiveAgent'];
         embedded_svc.settings.entryFeature = 'LiveAgent';
