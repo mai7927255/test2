@@ -29,6 +29,7 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		
 embedded_svc.settings.extraPrechatInfo = [{
   "entityName": "Account",
   "linkToEntityName": "Case",
@@ -39,6 +40,12 @@ embedded_svc.settings.extraPrechatInfo = [{
     "doCreate": true,
     "doFind": true,
     "label": "First Name"
+  },{
+    "isExactMatch": true,
+    "fieldName": "Last_Name_Thai_Encrypted__c",
+    "doCreate": true,
+    "doFind": true,
+    "label": "Last Name"
   }]
 }];
 
