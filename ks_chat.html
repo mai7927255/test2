@@ -35,6 +35,29 @@
         { "value": "Live Chat", "label": "Origin", "displayToAgent": true },
         { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true }];
        embedded_svc.settings.extraPrechatInfo = [{
+            "entityName": "Case",
+            "showOnCreate": true,
+            "saveToTranscript": "CaseId",
+            "entityFieldMaps": [{
+                "isExactMatch": false,
+                "fieldName": "Site_Language__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Language"
+            }, {
+                "isExactMatch": false,
+                "fieldName": "Origin",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Origin"
+            }, {
+                "isExactMatch": false,
+                "fieldName": "Case_Channel__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Channel"
+            }]
+        },{
   	  "entityName": "Account",
   	  "linkToEntityName": "Case",
   	  "linkToEntityField": "AccountId",
