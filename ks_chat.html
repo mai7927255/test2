@@ -63,6 +63,8 @@
 
         embedded_svc.settings.enabledFeatures = ['LiveAgent'];
         embedded_svc.settings.entryFeature = 'LiveAgent';
+	     embedded_svc.settings.autoOpenPostChat = true;
+        embedded_svc.settings.widgetWidth = '350px';
 
         embedded_svc.init(
             'https://krungsri--ccuat.sandbox.my.salesforce.com',
@@ -79,6 +81,16 @@
                 isOfflineSupportEnabled: false
             }
         );
+	     embedded_svc.addEventHandler("onSettingsCallCompleted", function (data) {
+            $(".embeddedServiceHelpButton .helpButton .uiButton").append("<i class='fal fa-comment-alt-lines'></i>");
+        });
+        embedded_svc.addEventHandler("afterMaximize", function (data) {
+            $(".minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI i").remove();
+            $(".minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI").append("<i class='fal fa-comment-alt-lines'></i>");
+            if (typeof $("#chat_pdpa").val() === "undefined") {
+                $(".fieldList .inputSelect").append("<div id='chat_pdpa' style='text-align: left;font-size: 12px;'>ท่านสามารถอ่านประกาศการคุ้มครองข้อมูลส่วนบุคคลได้ที่<br /> <a href='https://www.krungsri.com/pdpa/privacy-notice-th' target='blank'>https://www.krungsri.com/pdpa/privacy-notice-th</a></div>");
+            }
+        });
     };
 
     if (!window.embedded_svc) {
