@@ -36,27 +36,9 @@
         { "value": "0120K000000q2ixQAA", "transcriptFields": ["RecordTypeId"] },
         { "value": "Thai", "label": "Language", "displayToAgent": true },
         { "value": "Live Chat", "label": "Case Origin", "displayToAgent": true},
-        { "value": "Live Chat - Krungsri.com", "label": "Case Channel", "displayToAgent": true }];
-
-
-embedded_svc.settings.extraPrechatInfo = [{
-            "entityName": "Case",
-            "showOnCreate": true,
-            "saveToTranscript": "CaseId",
-            "entityFieldMaps": [{
-                "isExactMatch": false,
-                "fieldName": "Origin",
-                "doCreate": true,
-                "doFind": false,
-                "label": "Case Origin"
-            }, {
-                "isExactMatch": false,
-                "fieldName": "Case_Channel__c",
-                "doCreate": true,
-                "doFind": false,
-                "label": "Case Channel"
-            }]
-        }];
+        { "value": "Live Chat - Krungsri.com", "label": "Case Channel", "displayToAgent": true },
+	{ "label": "First Name", "transcriptFields": ["Search_Firstname__c"]},
+	{ "label": "Last Name", "transcriptFields": ["Search_Lastname__c"]}];
 
         embedded_svc.settings.enabledFeatures = ['LiveAgent'];
         embedded_svc.settings.entryFeature = 'LiveAgent';
