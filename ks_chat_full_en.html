@@ -31,8 +31,29 @@
         //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
         //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
         //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+embedded_svc.settings.extraPrechatInfo = [{
+  "entityName": "Account",
+  "entityFieldMaps": [{
+    "isExactMatch": true,
+    "fieldName": "First_Name_Thai_Encrypted__c",
+    "doCreate": true,
+    "doFind": true,
+    "label": "First Name"
+  },{
+    "isExactMatch": true,
+    "fieldName": "Last_Name_Thai_Encrypted__c",
+    "doCreate": true,
+    "doFind": true,
+    "label": "Last Name"
+  }]
+}];
 
-        
+
+
+
+
+
+        embedded_svc.settings.extraPrechatFormDetails = [{ "value": window.location.href, "transcriptFields": ["ReferrerUri"] },{ "value": "0120K000000q2ixQAA", "transcriptFields": ["RecordTypeId"] },{ "label": "First Name", "transcriptFields": ["Search_Firstname__c"]},{ "label": "Last Name", "transcriptFields": ["Search_Lastname__c"]}];
 
         embedded_svc.settings.enabledFeatures = ['LiveAgent'];
         embedded_svc.settings.entryFeature = 'LiveAgent';
