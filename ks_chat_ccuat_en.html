@@ -44,12 +44,8 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
- embedded_svc.settings.extraPrechatFormDetails = [{ "value": window.location.href, "transcriptFields": ["ReferrerUri"] },
-        { "value": "0120K000000q2ixQAA", "transcriptFields": ["RecordTypeId"] },
-        { "value": "English", "label": "Language", "displayToAgent": true },
-        { "value": "Live Chat", "label": "Origin", "displayToAgent": true },
-        { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true }];
-        embedded_svc.settings.extraPrechatInfo = [{
+
+		embedded_svc.settings.extraPrechatInfo = [{
   "entityName": "Account",
   "linkToEntityName": "LiveChatTranscript",
   "linkToEntityField": "AccountId",
@@ -67,6 +63,14 @@
     "label": "Last Name"
   }]
 	}];
+
+		
+ embedded_svc.settings.extraPrechatFormDetails = [{ "value": window.location.href, "transcriptFields": ["ReferrerUri"] },
+        { "value": "0120K000000q2ixQAA", "transcriptFields": ["RecordTypeId"] },
+        { "value": "English", "label": "Language", "displayToAgent": true },
+        { "value": "Live Chat", "label": "Origin", "displayToAgent": true },
+        { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true }];
+        
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
