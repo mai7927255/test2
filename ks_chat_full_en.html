@@ -35,8 +35,8 @@
         embedded_svc.settings.extraPrechatFormDetails = [{ "value": window.location.href, "transcriptFields": ["ReferrerUri"] },
         { "value": "0120K000000q2ixQAA", "transcriptFields": ["RecordTypeId"] },
         { "value": "Thai", "label": "Language", "displayToAgent": true },
-        { "value": "Live Chat", "label": "Origin", "displayToAgent": true},
-        { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true }];
+        { "value": "Live Chat", "label": "Case Origin", "displayToAgent": true},
+        { "value": "Live Chat - Krungsri.com", "label": "Case Channel", "displayToAgent": true }];
 
 
 embedded_svc.settings.extraPrechatInfo = [{
@@ -45,22 +45,16 @@ embedded_svc.settings.extraPrechatInfo = [{
             "saveToTranscript": "CaseId",
             "entityFieldMaps": [{
                 "isExactMatch": false,
-                "fieldName": "Site_Language__c",
-                "doCreate": true,
-                "doFind": false,
-                "label": "Language"
-            }, {
-                "isExactMatch": false,
                 "fieldName": "Origin",
                 "doCreate": true,
                 "doFind": false,
-                "label": "Origin"
+                "label": "Case Origin"
             }, {
                 "isExactMatch": false,
                 "fieldName": "Case_Channel__c",
                 "doCreate": true,
                 "doFind": false,
-                "label": "Channel"
+                "label": "Case Channel"
             }]
         }];
 
