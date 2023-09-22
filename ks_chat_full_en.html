@@ -13,7 +13,7 @@
 	}
 </style>
 <body>
-	test 4
+	full 1
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #FFD400;
@@ -44,26 +44,46 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-		embedded_svc.settings.extraPrechatInfo = [{
-  "entityName": "Account",
-  "entityFieldMaps": [{
-    "isExactMatch": true,
-    "fieldName": "First_Name_Thai_Encrypted__c",
-    "doCreate": true,
-    "doFind": true,
-    "label": "First Name"
-  },{
-    "isExactMatch": true,
-    "fieldName": "Last_Name_Thai_Encrypted__c",
-    "doCreate": true,
-    "doFind": true,
-    "label": "Last Name"
-  }]
-}];
-		
+		 embedded_svc.settings.extraPrechatFormDetails = [{ "value": window.location.href, "transcriptFields": ["ReferrerUri"] },
+        { "value": "0121e0000000GSvAAM", "transcriptFields": ["RecordTypeId"] },
+        { "value": "English", "label": "Language", "displayToAgent": true },
+        { "value": "Live Chat", "label": "Origin", "displayToAgent": true },
+        { "value": "Live Chat - Krungsri.com", "label": "Channel", "displayToAgent": true ,"transcriptFields": ["Chat_Origin__c"]},
+	{ "label":"First Name", "transcriptFields": ["Search_Firstname__c"]},
+	{ "label":"Last Name", "transcriptFields": ["Search_Lastname__c"]}
+								 
+								 ];
+        embedded_svc.settings.extraPrechatInfo = [{
+            "entityName": "Case",
+            "showOnCreate": true,
+            "saveToTranscript": "CaseId",
+            "entityFieldMaps": [{
+                "isExactMatch": false,
+                "fieldName": "Site_Language__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Language"
+            }, {
+                "isExactMatch": false,
+                "fieldName": "Origin",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Origin"
+            }, {
+                "isExactMatch": false,
+                "fieldName": "Case_Channel__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Channel"
+            }]
+        }];
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+        embedded_svc.settings.autoOpenPostChat = true;
+        embedded_svc.settings.widgetWidth = '350px';
+
+
 
 		embedded_svc.init(
 			'https://krungsri--full.sandbox.my.salesforce.com',
